@@ -1,8 +1,12 @@
 const express= require('express');
 const cors= require('cors');
+const { conectarDB } = require('./db/config');
 require('dotenv').config();
 // levantamos  el servicio 
 const app = express();
+
+// conectar con la bd 
+conectarDB();
 
 app.use(express.static('public'));
 
@@ -14,7 +18,8 @@ app.use(cors());
 app.use(express.json());
 
 // ruutas 
-app.use('/api/auth',require('./router/auth'))
+app.use('/api/auth',require('./router/auth'));
+app.use('/api/auth', require('./router/rutasMedico'));
 
 
 
