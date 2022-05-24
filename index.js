@@ -20,7 +20,7 @@ app.use(express.json());
 // ruutas 
 app.use('/api/auth',require('./router/auth'));
 app.use('/api/auth', require('./router/rutasMedico'));
-
+app.use('/api/auth', require('./router/rutaAdmin'));
 
 
 // asignamos el puerto 
